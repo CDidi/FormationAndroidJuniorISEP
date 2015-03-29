@@ -5,4 +5,19 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Formation Names -->
+    <string name="first_formation">Formulaire</string>
+    <string name="second_formation">Simple ListView</string>
+    <string name="title_activity_first_formation">FirstFormation</string>
+    <string name="title_activity_second_formation">SecondFormation</string>
+
+    <!-- First Formation Activity -->
+    <string name="first_formation_hint_edit">Clique</string>
+    <string name="first_formation_tv">Remplace moi</string>
+    <string name="first_formation_button_validate">Valider</string>
+
+    <!-- Second Formation Activity-->
+    <string name="second_formation_edit_hint">Rempli la liste</string>
+    <string name="second_formation_button_add">Ajouter</string>
+
 </resources>
