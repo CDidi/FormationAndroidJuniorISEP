@@ -18,11 +18,15 @@
         </activity>
         <activity
             android:name=".FirstFormation"
-            android:label="@string/title_activity_first_formation" >
+            android:label="@string/first_formation" >
         </activity>
         <activity
             android:name=".SecondFormation"
-            android:label="@string/title_activity_second_formation" >
+            android:label="@string/second_formation" >
+        </activity>
+        <activity
+            android:name=".ThirdFormation"
+            android:label="@string/third_formation" >
         </activity>
     </application>
 

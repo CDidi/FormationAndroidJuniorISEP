@@ -5,11 +5,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+
+    <!-- Menu Iem Third Formation -->
+    <string name="action_order_by_firstname">Order By FirstName</string>
+    <string name="action_order_by_lastname">Order By LastName</string>
+    <string name="action_order_by_type">Order By Type</string>
+
     <!-- Formation Names -->
     <string name="first_formation">Formulaire</string>
     <string name="second_formation">Simple ListView</string>
-    <string name="title_activity_first_formation">FirstFormation</string>
-    <string name="title_activity_second_formation">SecondFormation</string>
+    <string name="third_formation">Custom ListView</string>
 
     <!-- First Formation Activity -->
     <string name="first_formation_hint_edit">Clique</string>

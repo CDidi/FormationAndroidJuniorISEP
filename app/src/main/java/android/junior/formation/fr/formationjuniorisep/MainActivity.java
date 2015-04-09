@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         myValues = new ArrayList<>();
         myValues.add(getString( R.string.first_formation) );
         myValues.add(getString( R.string.second_formation) );
+        myValues.add(getString(R.string.third_formation));
 
         myListView = (ListView) findViewById(R.id.myListView);
 
@@ -61,6 +62,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
                 break;
 
+            case 2:
+
+                intent = new Intent(this, ThirdFormation.class);
+
+                break;
 
         }
 
