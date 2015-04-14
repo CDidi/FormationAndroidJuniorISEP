@@ -92,8 +92,6 @@ public class ThirdFormation extends ActionBarActivity
                 }
             });
 
-            Contact contact = new Contact("Bev","Relou", 6);
-            contacts.add(contact);
 
             adapter.updateList(contacts);
 
