@@ -1,10 +1,15 @@
 package android.junior.formation.fr.formationjuniorisep;
 
+import android.app.Dialog;
 import android.junior.formation.fr.formationjuniorisep.Model.Contact;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -15,7 +20,7 @@ import java.util.List;
 /**
  * Created by floriantorel on 02/04/15.
  */
-public class ThirdFormation extends ActionBarActivity
+public class ThirdFormation extends ActionBarActivity implements View.OnClickListener
 {
 
     private List<Contact> contacts = new ArrayList<>();
@@ -23,6 +28,16 @@ public class ThirdFormation extends ActionBarActivity
     private ListView listView;
 
     private ThirdFormationAdapter adapter;
+
+    private Button button;
+
+    private Dialog dialog;
+
+    private EditText edFirstName;
+    private EditText edLastName;
+    private EditText edType;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +73,72 @@ public class ThirdFormation extends ActionBarActivity
         });
         */
 
+        button = (Button) findViewById(R.id.third_formation_button_add_contact);
+        button.setOnClickListener(this);
+
         listView = (ListView) findViewById(R.id.third_formation_listview);
 
         adapter = new ThirdFormationAdapter(contacts, getApplicationContext());
 
         listView.setAdapter(adapter);
 
+    }
+
+
+    private Dialog createCustomDialog()
+    {
+        final Dialog dialog = new Dialog(ThirdFormation.this);
+        dialog.setContentView(R.layout.custom_dialog_third_formation);
+        dialog.setTitle(getString(R.string.third_formation_dialog_title));
+
+        Button but = (Button) dialog.findViewById(R.id.custom_dialog_third_formation_finish);
+        but.setOnClickListener(this);
+
+        edFirstName = (EditText) dialog.findViewById(R.id.custom_dialog_third_formation_ed_firstname);
+        edLastName = (EditText) dialog.findViewById(R.id.custom_dialog_third_formation_last_name);
+        edType = (EditText) dialog.findViewById(R.id.custom_dialog_third_formation_ed_type);
+
+        return dialog;
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        switch ( v.getId() )
+        {
+            case R.id.third_formation_button_add_contact:
+
+                dialog = createCustomDialog();
+                dialog.show();
+
+                break;
+
+            case R.id.custom_dialog_third_formation_finish:
+
+
+                String firstName = edFirstName.getText().toString();
+                String lastName = edLastName.getText().toString();
+                int type = Integer.parseInt(edType.getText().toString());
+
+                Contact contact = new Contact(firstName,lastName,type);
+
+                dialog.dismiss();
+
+                contacts.add(contact);
+                adapter.updateList(contacts);
+
+                break;
+        }
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 
 

@@ -25,4 +25,12 @@
     <string name="second_formation_edit_hint">Rempli la liste</string>
     <string name="second_formation_button_add">Ajouter</string>
 
+    <!-- Third Formation Activity -->
+    <string name="third_formation_button_add">Add Contact</string>
+    <string name="third_formation_dialog_title">Add Contact</string>
+    <string name="third_formation_dialog_button">Add Contact</string>
+    <string name="third_formation_dialog_ed_firstname_hint">Firstname</string>
+    <string name="third_formation_dialog_ed_lastname_hint">Lastname</string>
+    <string name="third_formation_dialog_ed_type_hint">Type</string>
+
 </resources>
